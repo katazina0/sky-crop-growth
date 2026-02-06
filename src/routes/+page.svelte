@@ -159,7 +159,7 @@
 
           <div class="flex items-center justify-between w-full gap-2 text-muted-foreground">
             <span>✅ - accurate</span>
-            <span>❔ - inaccurate</span>
+            <span>⚠️ - might be inaccurate</span>
             <span>‼️ - wrong</span>
           </div>
         </div>

@@ -34,6 +34,7 @@ export const datasets: Dataset[] = [
   { name: "wheat150", group: "WHEAT_POTATO_CARROT", g: 150 },
   { name: "melon170", group: "MELON_PUMPKIN", g: 170 },
   { name: "cane190lazzi", group: "CANE", g: 190 },
+  { name: "cane170", group: "CANE", g: 170 },
 
   // mushroom needs a different formula
   { name: "mushroom150", group: "MUSHROOM", g: 150 },

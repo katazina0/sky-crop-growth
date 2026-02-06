@@ -31,12 +31,14 @@ export const models: Record<CropGroup, Model> = {
   // 0.08        *probably* accurate
   COCOA: { group: "COCOA", label: "✅ Cocoa", K: 2, P: 0.08 },
 
-  // 0.175?
-  // CACTUS: { group: "CACTUS", label: "❔ Cactus", k: 8, p: 7 / 40 },
-  CACTUS: { group: "CACTUS", label: "❔ Cactus", K: 8, P: 0.16 },
-
-  // 0.15?       accurate @ G = 190
-  CANE: { group: "CANE", label: "❔ Cane", K: 8, P: 3 / 20 },
+  // cactus/cane are bugged. they also seem to have the same speed.
+  // crop growth is most likely broken for them and the curves look OK at G=0, P=0.43
+  // for the datasets:
+  //   G=170 cane was sampled properly without early stopping, curve should fit that
+  //   G=190 cane was stopped early during farming - the tail doesn't "plateau" completely
+  //   G=150 cane doesn't have enough samples to make any assumptions
+  CACTUS: { group: "CACTUS", label: "⚠️ Cactus", K: 8, P: 0.43 },
+  CANE: { group: "CANE", label: "⚠️ Cane", K: 8, P: 0.43 },
 
   // odd crop, every mushroom is affected by other surrounding mushrooms
   // k & p are at most just approximations
