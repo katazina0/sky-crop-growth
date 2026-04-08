@@ -15,9 +15,11 @@ export type Model = {
   group: CropGroup;
 };
 
+// MELON/PUMPKIN previously:
+// 0.04        accurate @ G = 170
+// MELON_PUMPKIN: { group: "MELON_PUMPKIN", label: "✅ Melon / Pumpkin", K: 1, P: 1 / 25 },
 export const models: Record<CropGroup, Model> = {
-  // 0.04        accurate @ G = 170
-  MELON_PUMPKIN: { group: "MELON_PUMPKIN", label: "✅ Melon / Pumpkin", K: 1, P: 1 / 25 },
+  MELON_PUMPKIN: { group: "MELON_PUMPKIN", label: "✅ Melon / Pumpkin", K: 1, P: 0.12 },
 
   // 0.333333... accurate @ G = 200
   WHEAT_POTATO_CARROT: { group: "WHEAT_POTATO_CARROT", label: "✅ Wheat / Potato / Carrot", K: 7, P: 1 / 3 },
