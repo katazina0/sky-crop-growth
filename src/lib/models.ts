@@ -15,10 +15,10 @@ export type Model = {
   group: CropGroup;
 };
 
-// MELON/PUMPKIN previously:
-// 0.04        accurate @ G = 170
-// MELON_PUMPKIN: { group: "MELON_PUMPKIN", label: "✅ Melon / Pumpkin", K: 1, P: 1 / 25 },
 export const models: Record<CropGroup, Model> = {
+  // MELON/PUMPKIN previously:
+  // 0.04        accurate @ G = 170
+  // MELON_PUMPKIN: { group: "MELON_PUMPKIN", label: "✅ Melon / Pumpkin", K: 1, P: 1 / 25 },
   MELON_PUMPKIN: { group: "MELON_PUMPKIN", label: "✅ Melon / Pumpkin", K: 1, P: 0.12 },
 
   // 0.333333... accurate @ G = 200
@@ -37,10 +37,11 @@ export const models: Record<CropGroup, Model> = {
   // crop growth is most likely broken for them and the curves look OK at G=0, P=0.43
   // for the datasets:
   //   G=170 cane was sampled properly without early stopping, curve should fit that
-  //   G=190 cane was stopped early during farming - the tail doesn't "plateau" completely
   //   G=150 cane doesn't have enough samples to make any assumptions
-  CACTUS: { group: "CACTUS", label: "⚠️ Cactus", K: 8, P: 0.43 },
-  CANE: { group: "CANE", label: "⚠️ Cane", K: 8, P: 0.43 },
+
+  // TODO: verify cactus/cane models after growth speed fixes
+  CACTUS: { group: "CACTUS", label: "⚠️ Cactus", K: 2, P: 0.08 },
+  CANE: { group: "CANE", label: "⚠️ Cane", K: 2, P: 0.08 },
 
   // odd crop, every mushroom is affected by other surrounding mushrooms
   // k & p are at most just approximations

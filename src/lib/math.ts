@@ -128,11 +128,11 @@ function maxTick(group: CropGroup): number {
     case "COCOA":
       return 40000;
     case "CANE":
-      return 34000;
+      return 30000;
     case "CACTUS":
-      return 38000;
+      return 30000;
     case "MELON_PUMPKIN":
-      return 40000;
+      return 20000;
     case "MUSHROOM":
       return 26000;
     case "SUNFLOWER_ROSE":
@@ -158,11 +158,9 @@ export function modelToPlot(
   const k = model.K;
   const pStage = model.P;
 
-  const g = model.group === "CANE" || model.group === "CACTUS" ? 0 : G;
-
   // model q
   const pTickBase = 1 - Math.pow(1 - 1 / S, R);
-  const q = pTickBase * pStage * (100 + g) / 100;
+  const q = pTickBase * pStage * (100 + G) / 100;
 
   // build uPlot data arrays
   const yModel = xs.map((t) => p100ByTick(t, q, k) * 100);

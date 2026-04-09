@@ -16,17 +16,17 @@ export type Dataset = {
   g: number;
 };
 
-// outdated, pre-buff:
+// outdated, pre-buff / bugfix:
 // { name: "melon150", group: "MELON_PUMPKIN", g: 150 },
 // { name: "melon170", group: "MELON_PUMPKIN", g: 170 },
+// { name: "cactus150", group: "CACTUS", g: 150 },
+// { name: "cactus170", group: "CACTUS", g: 170 },
+// { name: "cane150", group: "CANE", g: 150 },
+// { name: "cane190lazzi", group: "CANE", g: 190 },
+// { name: "cane170", group: "CANE", g: 170 },
 
 export const datasets: Dataset[] = [
-  { name: "cactus150", group: "CACTUS", g: 150 },
-  { name: "cactus170", group: "CACTUS", g: 170 },
-
-  { name: "cane150", group: "CANE", g: 150 },
-  { name: "cane190lazzi", group: "CANE", g: 190 },
-  { name: "cane170", group: "CANE", g: 170 },
+  { name: "cactus200", group: "CACTUS", g: 200 },
 
   { name: "cocoa150", group: "COCOA", g: 150 },
   { name: "cocoa150_2", group: "COCOA", g: 150 },
