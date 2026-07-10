@@ -7,6 +7,7 @@ export const datasetsByName: Record<string, unknown> = {};
 for (const [path, mod] of Object.entries(jsons)) {
   const file = path.split("/").pop()!;
   const name = file.replace(/\.json$/i, "");
+  // deno-lint-ignore no-explicit-any
   datasetsByName[name] = (mod as any).default ?? mod;
 }
 
@@ -16,16 +17,8 @@ export type Dataset = {
   g: number;
 };
 
-// outdated, pre-buff / bugfix:
-// { name: "melon150", group: "MELON_PUMPKIN", g: 150 },
-// { name: "melon170", group: "MELON_PUMPKIN", g: 170 },
-// { name: "cactus150", group: "CACTUS", g: 150 },
-// { name: "cactus170", group: "CACTUS", g: 170 },
-// { name: "cane150", group: "CANE", g: 150 },
-// { name: "cane190lazzi", group: "CANE", g: 190 },
-// { name: "cane170", group: "CANE", g: 170 },
-
 export const datasets: Dataset[] = [
+  { name: "cane200lazzilatest", group: "CANE", g: 200 },
   { name: "cactus200", group: "CACTUS", g: 200 },
 
   { name: "cocoa150", group: "COCOA", g: 150 },
@@ -43,7 +36,6 @@ export const datasets: Dataset[] = [
   { name: "wheat150", group: "WHEAT_POTATO_CARROT", g: 150 },
   { name: "potato200", group: "WHEAT_POTATO_CARROT", g: 200 },
 
-  // latest models
   { name: "melon200", group: "MELON_PUMPKIN", g: 200 },
 
   // mushroom needs a different formula

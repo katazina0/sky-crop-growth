@@ -40,8 +40,8 @@ export const models: Record<CropGroup, Model> = {
   //   G=150 cane doesn't have enough samples to make any assumptions
 
   // TODO: verify cactus/cane models after growth speed fixes
-  CACTUS: { group: "CACTUS", label: "⚠️ Cactus", K: 2, P: 0.08 },
-  CANE: { group: "CANE", label: "⚠️ Cane", K: 2, P: 0.08 },
+  CACTUS: { group: "CACTUS", label: "⚠️ Cactus", K: 2, P: 0.1 },
+  CANE: { group: "CANE", label: "⚠️ Cane", K: 2, P: 0.1 },
 
   // odd crop, every mushroom is affected by other surrounding mushrooms
   // k & p are at most just approximations
