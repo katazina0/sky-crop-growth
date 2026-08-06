@@ -47,7 +47,7 @@
   // randomTickSpeed: 7
   let R = $derived(override ? overrideR : DEFAULT_R);
 
-  // crop growth: 0..200, steps of 10
+  // crop growth: 0..210, steps of 10
   let G = $state(DEFAULT_G);
 
   // stages
@@ -174,7 +174,7 @@
             id="g"
             type="range"
             min="0"
-            max="200"
+            max="210"
             step="10"
             list="g-steps"
             bind:value={G}
