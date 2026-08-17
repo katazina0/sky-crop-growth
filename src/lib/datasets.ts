@@ -18,8 +18,15 @@ export type Dataset = {
 };
 
 export const datasets: Dataset[] = [
+  // clean dataset, but it doesn't fit the current model spec.
+  // cactus/cane definitely work differently when comparing to other
+  // crops (except mushrooms), so a special model for them is needed.
+  { name: "cactus190", group: "CACTUS", g: 190 },
+
   { name: "cane200lazzilatest", group: "CANE", g: 200 },
-  { name: "cactus200", group: "CACTUS", g: 200 },
+
+  // bad set, server reboot in the middle of capture :P
+  // { name: "cactus200", group: "CACTUS", g: 200 },
 
   { name: "cocoa150", group: "COCOA", g: 150 },
   { name: "cocoa150_2", group: "COCOA", g: 150 },

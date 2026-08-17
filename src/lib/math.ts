@@ -78,10 +78,12 @@ function unionSorted(a: number[], b: number[]): number[] {
 }
 
 function interpolateOnto(unionXs: number[], xs: number[], ys: number[]): number[] {
-  const out = new Array<number>(unionXs.length).fill(0);
+  const out = Array.from<number>({ length: unionXs.length }).fill(0);
   const n = xs.length;
 
-  if (n === 0) return out;
+  if (n === 0) {
+    return out;
+  }
 
   const xMin = xs[0];
   const xMax = xs[n - 1];
@@ -119,25 +121,8 @@ function interpolateOnto(unionXs: number[], xs: number[], ys: number[]): number[
   return out;
 }
 
-function maxTick(group: CropGroup): number {
-  switch (group) {
-    case "WHEAT_POTATO_CARROT":
-      return 25000;
-    case "WART":
-      return 25000;
-    case "COCOA":
-      return 40000;
-    case "CANE":
-      return 30000;
-    case "CACTUS":
-      return 30000;
-    case "MELON_PUMPKIN":
-      return 20000;
-    case "MUSHROOM":
-      return 26000;
-    case "SUNFLOWER_ROSE":
-      return 25000;
-  }
+function maxTick(S: number, R: number, G: number, model: Model): number {
+  return ticksForPercentile(S, R, G, model.K, model.P, 99.99);
 }
 
 export function modelToPlot(
@@ -148,7 +133,7 @@ export function modelToPlot(
   overlays: { label: string; series: DatasetPlot; stroke?: string; dash?: number[] }[] = [],
 ): ModelPlot {
   const step = 10;
-  const max = maxTick(model.group);
+  const max = maxTick(S, R, G, model);
 
   // shared xs = union(model grid, overlay xs...)
   let xs = buildStepXs(max, step);
